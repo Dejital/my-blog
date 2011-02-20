@@ -26,7 +26,6 @@
 	font-weight:normal;
 	font-style:normal;
 }
-
 ::selection {
 	background:green;
 	color:black;
@@ -35,11 +34,9 @@
 	background:green;
 	color:black;
 }
-
 html {
 	margin:20px
 }
-
 body {
 	margin:0 auto;
 	font-family:'NotCourierSansRegular', sans-serif;
@@ -150,8 +147,7 @@ ul, li {
 }
 code {
 	font-size:14px;
-	margin:5px;
-	padding:7px;
+	padding:2px;
 	color:white;
 	font-family:'saxMonoRegular', Courier New, monospace;
 	background-color:black;
@@ -163,7 +159,18 @@ code {
 	border-radius:3px;
 }
 pre {
-  	padding:18px;
+  	font-size:15px;
+	margin:6px;
+	padding:7px;
+	color:white;
+	font-family:'saxMonoRegular', Courier New, monospace;
+	background-color:black;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-icab-border-radius:3px;
+	-khtml-border-radius:3px;
+	-o-border-radius:3px;
+	border-radius:3px;
 }
 blockquote {
   	font-style:italic;
