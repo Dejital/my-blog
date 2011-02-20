@@ -158,7 +158,7 @@ code {
 	-o-border-radius:3px;
 	border-radius:3px;
 }
-pre > code {
+code > pre {
   	font-size:15px;
 	margin:6px;
 	padding:7px;
