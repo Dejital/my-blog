@@ -1,8 +1,12 @@
 require 'toto'
+require 'uv'
+require 'rack/codehighlighter'
 
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico', '/font-face'], :root => 'public'
 use Rack::CommonLogger
+use Rack::Codehighlighter, :ultraviolet, :theme => "sunburst", :lines => false,
+  :element => "pre", :pattern => /\A:::(\w+)\s*(\n|&#x000A;)/i, :logging => false
 
 if ENV['RACK_ENV'] == 'development'
   use Rack::ShowExceptions

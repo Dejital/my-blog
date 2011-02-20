@@ -1,0 +1,39 @@
+.pagination {
+	font-size: 80%;
+}
+        
+.pagination a {
+    text-decoration:none;
+}
+
+.pagination a, .pagination span {
+    display:block;
+    float:left;
+    padding:0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+	min-width:1em;
+	text-align:center;
+}
+
+.pagination .current {
+    color:green;
+}
+
+.pagination .current.prev, .pagination .current.next {
+	color:green;
+}
+.pagination .current.prev, .pagination .current.next:hover:before {
+	color:green;
+	content:'{'
+}
+.pagination .current.prev, .pagination .current.next:hover:after {
+	color:green;
+	content:'}'
+}
+.pagination .current.prev, .pagination .current.next:before {
+	content:'['
+}
+.pagination .current.prev, .pagination .current.next:after {
+	cpntent:']'
+}
