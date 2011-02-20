@@ -5,7 +5,7 @@ require 'rack/codehighlighter'
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico', '/font-face'], :root => 'public'
 use Rack::CommonLogger
-use Rack::Codehighlighter, :ultraviolet, :theme => "sunburst", :markdown=> true, :lines => false,
+use Rack::Codehighlighter, :ultraviolet, :theme => "sunburst", :markdown => true, :lines => false,
   :element => "pre", :pattern => /\A:::(\w+)\s*(\n|&#x000A;)/i, :logging => false
 
 if ENV['RACK_ENV'] == 'development'

@@ -6,7 +6,6 @@ tags: test, oz, dorothy, code, css
 Dorothy lived in the midst of the great Kansas prairies, with Uncle Henry, 
 who was a farmer, and Aunt Em, who was the farmer's wife.
 
-    :::css
 	#id:hover {
 		background:green;
 	}
