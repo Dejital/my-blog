@@ -1,11 +1,9 @@
 .pagination {
 	font-size: 80%;
 }
-        
 .pagination a {
     text-decoration:none;
 }
-
 .pagination a, .pagination span {
     display:block;
     float:left;
@@ -15,11 +13,9 @@
 	min-width:1em;
 	text-align:center;
 }
-
 .pagination .current {
     color:green;
 }
-
 .pagination .current.prev, .pagination .current.next {
 	color:green;
 }
