@@ -147,7 +147,7 @@ ul, li {
 }
 code {
 	color:white;
-	font-family:'saxMonoRegular', Courier New, monospace;
+	font-family:'saxMonoRegular', Monaco, "Courier New", monospace;
 	background-color:black;
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;
@@ -159,7 +159,7 @@ code {
 pre {
   	font-size:15px;
 	color:white;
-	font-family:'saxMonoRegular', Courier New, monospace;
+	font-family:'saxMonoRegular', Monaco, "Courier New", monospace;
 	background-color:black;
 	-webkit-border-radius:3px;
 	-moz-border-radius:3px;

@@ -1,42 +1,6 @@
-<script type="text/javascript">
-/*$('#content').infinitescroll({
- 
-    navSelector  : "div.navigation",            
-                    selector for the paged navigation (it will be hidden)
-    nextSelector : "div.navigation a:first",    
-                    selector for the NEXT link (to page 2)
-    itemSelector : "#content div.post"          
-                    selector for all items you'll retrieve
-  });*/
-</script>
-<script type="text/javascript">
-	function pageselectCallback(page_index, jq){
-		var new_content = jQuery('#hiddenresult article.post:eq('+page_index+')').clone();
-		$('#Searchresult').empty().append(new_content);
-		return false;
-	}
-/** 
-* Initialisation function for pagination
-*/
-	function initPagination() {
-		// count entries inside the hidden content
-		var num_entries = jQuery('#hiddenresult article.post').length;
-		// Create content inside pagination element
-		$("#articles").pagination(num_entries, {
-			callback: pageselectCallback,
-			items_per_page:1 // Show only one item per page
-		});
-	}
-// When document is ready, initialize pagination
-	$(document).ready(function(){      
-		initPagination();
-	});
-</script>
-<h1>A rather unusual blog</h1>
+<h1>blog</h1>
 <br />
 <br />
-<section id="articles">
-<div id="Searchresult"></div>
 <div id="hiddenresult">
 <% for article in articles[0...3] %>
 <article class="post">
@@ -51,7 +15,6 @@
 </article>
 <% end %>
 </div>
-</section>
 <section id="archives">
 <%= archives[3..-1] %>
 </section>
