@@ -44,6 +44,7 @@ body {
 	line-height:30px;
 	padding:15px;
 	width:720px;
+	background-color:#fcf9fc;
 }
 header, footer, section, article {
 	display:block;
@@ -175,4 +176,5 @@ body > footer {
 img {
 	margin-right:auto;
 	margin-left: auto;
+	width:720px;
 }
