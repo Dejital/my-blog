@@ -1,0 +1,5 @@
+title: A New Blog
+author: Humza
+tags: blog, toto, ruby, rack, heroku
+
+Hello! I decided to restart my blog, using the [toto](https://github.com/cloudhead/toto) blogging engine, which is built on top of rack. It is very cool. Hopefully the content of this blog will be more useful. I am also working on a whole new site redesign.
