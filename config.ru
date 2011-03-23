@@ -35,7 +35,7 @@ toto = Toto::Server.new do
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
   
   set :error     do |code|                                    # The HTML for your error page
-  "<h1>Uh-oh. ERROR #{code}. <a href="/">HOME</a></h1><br />"
+  "<h1>Uh-oh. ERROR #{code}. <a href='/'>HOME</a></h1><br />"
   end
 
 end
