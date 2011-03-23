@@ -21,6 +21,7 @@ toto = Toto::Server.new do
   # set [:setting], [value]
   # 
    set :author,    'Humza'                               	  # blog author
+   set :url,       "http://secondplanet-blog.heroku.com"
    set :title,     'Second Planet | Blog'                	  # site title
    set :root,      "index"                                    # page to load on /
   # set :date,      lambda {|now| now.strftime("%d/%m/%Y") }  # date format for articles
@@ -28,6 +29,7 @@ toto = Toto::Server.new do
    set :disqus,    'secondplanetblog'                         # disqus id, or false
    set :summary,   :max => 42, :delim => /~/                  # length of article summary and delimiter
    set :ext,       'txt'                                      # file extension for articles
+   set :github,    :user => 'secondplanet', :repos => ['secondplanet-blog', 'galacticsquid', 'synfig-osx']
   # set :cache,      28800                                    # cache duration, in seconds
 
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
