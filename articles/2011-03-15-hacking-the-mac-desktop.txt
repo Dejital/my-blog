@@ -2,7 +2,7 @@ title: Hacking the Mac Desktop
 author: Humza
 tags: Mac, desktop, geektool, shell, pyhton, css, ruby
 
-There are a ton of articles telling you how to customize you're Dock or add lots of menu bar-things on your Mac. This is another one of those kind of articles. However, this is probably the only one I will write, _and_ I haven't seen any articles that are exactly the same as this one. I'll be using something called [GeekTool](projects.tynsoe.org/en/geektool/), which lets you control desktop "geeklets" with shell scripts.
+There are a ton of articles telling you how to customize you're Dock or add lots of menu bar-things on your Mac. This is another one of those kind of articles. However, this is probably the only one I will write, _and_ I haven't seen any articles that are exactly the same as this one. I'll be using something called [GeekTool](http://projects.tynsoe.org/en/geektool/), which lets you control desktop "geeklets" with shell scripts.
 
 After you have downloaded GeekTool, not many exciting things will happen right away other than a new preference pane appering in System Preferences. Click on that preference pane. You get a choice of three "geeklets": image, file, and shell script. The image and file ones are quite boring; the cool part is the shell scripts. Drag a shell script geeklet onto your desktop. A geeklet settings window will magically appear. Next to the "command" field, click on the three dots. A mini text editor opens, where you can write a script that does something cool and GeekTool will print the output on your desktop. Let's try something simple:
 
@@ -11,12 +11,12 @@ After you have downloaded GeekTool, not many exciting things will happen right a
 That's cool, but how about something more dynamic. Something like printing the time backwards, updated every second, using Ruby.
 
 	:::ruby
-	#/usr/bin/ruby
+	#!/usr/bin/ruby
 	time=Time.new
 	time_string=time.to_s
 	puts time_string.reverse
 
-Now use the settings panel to make the script update every second. Choose some fancy fonts and colors, and you will ahve a functional backwards clock on your desktop. Now press the "Export…" button. GeekTool will export a .glet file so others can use it. Now for the fun part: in theory, it should be possible to do anything you can do on your computer inside a desktop widget thing. So, shouldn't styling a geeklet with custom CSS be possible? Maybe, with a tool written in python called `webkit2png`, which takes screenshots of webpages using WebKit and PyObjC, both of which should be included with your installation of Mac OS X. It can be installed easily with [Homebrew](https://mxcl.github.com/homebrew).
+Now use the settings panel to make the script update every second. Choose some fancy fonts and colors, and you will ahve a functional backwards clock on your desktop. Now press the "Export…" button. GeekTool will export a .glet file so others can use it. Now for the fun part: in theory, it should be possible to do anything you can do on your computer inside a desktop widget thing. So, shouldn't styling a geeklet with custom CSS be possible? Maybe, with a tool written in python called `webkit2png`, which takes screenshots of webpages using WebKit and PyObjC, both of which should be included with your installation of Mac OS X. It can be installed easily with [Homebrew](http://mxcl.github.com/homebrew).
 
 	brew install webkit2png
 	
@@ -32,10 +32,8 @@ To test it, create a file geeklet pointing to backwardstime.txt. So, we could wr
 
 	:::ruby
 	#!/usr/bin/ruby
-	# name of html file to print output to
-	html='backwardstime.html'
-	# text file containing output of a command or shell script
-	command_output='backwardstime.txt'
+	html='backwardstime.html' # name of html file to print output to
+	command_output='backwardstime.txt' # text file containing output of a command or shell script
 	command_output_string=File.read command_output
 	content=['<!doctype html>',
 	         '<html>',

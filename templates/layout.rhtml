@@ -19,6 +19,16 @@ twttr.anywhere(function(twitter) {
 </section>
 <footer>
 <img src="/css/octopus.png" />
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript"> 
+  google.load('search', '1', {language : 'en', style : google.loader.themes.MINIMALIST});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('016417595707677894927:4gp959zqhws');
+    customSearchControl.setResultSetSize(google.search.Search.SMALL_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
+<div id="cse" style="width: 100%;">Loading</div>
 All content &copy;2011 Humza Yaqoob. All rights reserved. | From the blog of Second Planet | Powered by the amazingness of <a href="http://cloudhead.io/toto">toto</a>, <a href="http://git-scm.com">git</a>, <a href="http://heroku.com">Heroku</a>, and <a href="/more">more</a> | <a href="/index.xml">RSS</a>
 </footer>
 </body>
