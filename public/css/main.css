@@ -146,19 +146,20 @@ ul, li {
 }
 code {
 	-webkit-border-radius:3px;  color:white;
-	-khtml-border-radius:3px;  font-family:'saxMonoRegular', Monaco, "Courier New", monospace;
-	-icab-border-radius: 3px;  background-color:black;
-	-moz-border-radius:  3px;  padding:3px;
-	-o-border-radius:    3px;
-	border-radius:       3px;
+	-khtml-border-radius: 3px;  font-family:'saxMonoRegular', Monaco, "Courier New", monospace;
+	-icab-border-radius:  3px;  background-color:black;
+	-moz-border-radius:   3px;
+	-o-border-radius:     3px;  margin:5px;
+	border-radius:        3px;  padding:7px;
 }
 pre {
 	-webkit-border-radius:3px;  font-size:15px;
-	-khtml-border-radius:3px;  color:white;
-	-icab-border-radius: 3px;  font-family:'saxMonoRegular', Monaco, "Courier New", monospace;
-	-moz-border-radius:  3px;  background-color:black;
-	-o-border-radius:    3px;  overflow:auto;
-	 border-radius:      3px;  max-height:45em;
+	-khtml-border-radius: 3px;  color:white;
+	-icab-border-radius:  3px;  font-family:'saxMonoRegular', Monaco, "Courier New", monospace;
+	-moz-border-radius:   3px;  background-color:black;
+	-o-border-radius:     3px;  overflow:auto;
+	 border-radius:       3px;  max-height:45em;
+	 							padding:18px;
 }
 pre::-webkit-scrollbar {
     width:10px;
