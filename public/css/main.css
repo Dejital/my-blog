@@ -6,20 +6,6 @@
 
 /* fonts */
 @font-face {
-	font-family:'NotCourierSansRegular';
-	src:url('/font-face/NotCourierSans-webfont.eot');
-	src:local('☺'), url('/font-face/NotCourierSans-webfont.woff') format('woff'), url('/font-face/NotCourierSans-webfont.ttf') format('truetype'), url('/font-face/NotCourierSans-webfont.svg#webfontnYvJbPbP') format('svg');
-	font-weight:normal;
-	font-style:normal;
-}
-@font-face {
-	font-family:'NotCourierSansBold';
-	src:url('NotCourierSans-Bold-webfont.eot');
-	src:local('☺'), url('/font-face/NotCourierSans-Bold-webfont.woff') format('woff'), url('/font-face/NotCourierSans-Bold-webfont.ttf') format('truetype'), url('/font-face/NotCourierSans-Bold-webfont.svg#webfontThsIQCKz') format('svg');
-	font-weight:normal;
-	font-style:normal;
-}
-@font-face {
 	font-family:'saxMonoRegular';
 	src:url('/font-face/saxmono-webfont.eot');
 	src:local('☺'), url('/font-face/saxmono-webfont.woff') format('woff'), url('/font-face/saxmono-webfont.ttf') format('truetype'), url('/font-face/saxmono-webfont.svg#webfontnYvJbPbP') format('svg');
@@ -80,9 +66,6 @@ header, footer, section, article {
 	float:right;
 	line-height:43px;
 	margin-right:30px;
-}
-h1 {
-	font-family:'NotCourierSansRegular', sans-serif
 }
 a {
 	color:green;
