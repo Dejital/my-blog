@@ -21,7 +21,6 @@
         url('/font-face/quattrocento-roman-fontfacekit/Quattrocento-Regular-webfont.svg#webfontn2UNCKq1') format('svg');
     font-weight:normal;
     font-style:normal;
-
 }
 ::selection {
 	background:green;
@@ -158,8 +157,7 @@ pre {
 	-icab-border-radius:  3px;  font-family:'saxMonoRegular', Monaco, "Courier New", monospace;
 	-moz-border-radius:   3px;  background-color:black;
 	-o-border-radius:     3px;  overflow:auto;
-	 border-radius:       3px;  max-height:45em;
-	 							padding:18px;
+	 border-radius:       3px;  padding:18px;
 }
 pre::-webkit-scrollbar {
     width:10px;
