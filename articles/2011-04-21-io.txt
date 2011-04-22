@@ -1,0 +1,136 @@
+title: Io
+author: Humza
+tags: io, prototype, programming language
+
+Lately I've been intersted in a neat language called [Io](http://iolanguage.com) (pronounced "eye-oh"). It has a minimal syntax with almost no syntactic sugar. I think it might even become one of my favorite languages, along with Ruby. Io is a prototype language, like JavaScript or Lua. In prototype languages, every "thing" is a clone of an object. There are no classes like in Ruby; only prototypes. To get started, download and install Io. I recommend getting a clone from the git repository: git://github.com/stevedekorte/io. Tar's are available from the website. Let's start the Io shell.
+
+    io
+    
+Now, try some code at the prompt:
+
+    :::io
+    Io 20090105
+    Io> 1 + 1 # a simple expression
+    ==> 2
+    Io> "Hello, world" println # strings are double quoted
+    Hello, world
+    ==> Hello, world
+    Io> number = 5
+        
+      Exception: Slot number not found. Must define slot using := operator before updating.
+      ---------
+      message 'updateSlot' in 'Command Line' on line 1
+    
+    Io>
+    
+The first two are fairly self-explanatory, but our last attempt at variable assignment did not work. Io has instead raised an [`Exception`](http://www.iolanguage.com/scm/io/docs/reference/index.html#/Core/Core/Exception/) that a _slot_ was not found and that the error was in _message_ `updateSlot`. You are advised to define a slot with the `:=` assignment operator. Almost every thing in Io is a message. In the line `"Hello, world" println` you are sending a `Sequence` the `println` message. To see all the operators used in Io, type `OperatorTable`.
+
+    :::io
+    Io> OperatorTable
+    ==> OperatorTable_0x248b20:
+    Operators
+      0   ? @ @@
+      1   **
+      2   % * /
+      3   + -
+      4   << >>
+      5   < <= > >=
+      6   != ==
+      7   &
+      8   ^
+      9   |
+      10  && and
+      11  or ||
+      12  ..
+      13  %= &= *= += -= /= <<= >>= ^= |=
+      14  return
+    
+    Assign Operators
+      ::= newSlot
+      :=  setSlot
+      =   updateSlot
+    
+    To add a new operator: OperatorTable addOperator("+", 4) and implement the + message.
+    To add a new assign operator: OperatorTable addAssignOperator("=", "updateSlot") and implement the updateSlot message.
+    
+    Io>
+    
+`:=` is the assignment operator for `setSlot`. The operators above are listed by order of operation in evaluation of an expression. So, let's try that assignment again:
+
+    Io> number := 4
+    ==> 4
+    
+Now, `=` will update a slot. In Io, things are objects. Objects can have slots. Objects support a `type` slot. Typing `Object` at the prompt will go on to tell you all about the `Object` prototype and it's slots. To create objects, we can `clone` another:
+
+    :::io
+    Io> boringObject := Object clone
+    ==> Object_0x3b1b60:
+    
+    Io> boringObject type
+    ==> Object
+    Io> AnotherBoringObject := Object clone
+    ==> AnotherBoringObject_0x2cb290:
+      type            = "AnotherBoringObject"
+    
+    Io> AnotherBoringObject type
+    ==> AnotherBoringObject
+    Io> andAnotherObject := AnotherBoringObject clone
+    ==> AnotherBoringObject_0x35cc80:
+    
+    Io>
+    
+So, you can see that if an object is a clone of an object and doesn't have a specific slot, like `type`, it will get the slot from it's parent. Note that `boringObject` is a clone of `Object` and so returns `"Object"` from it's parent. Now look at the next example. `AnotherBoringObject` is based on the `Object` prototype, but returns `AnotherBoringObject` as a `type`. CamelCase is a convention on Io. This is how prototypes work in Io. Now, let's look at lists and maps:
+
+    :::io
+    Io> iceCream := list()
+    ==> list()
+    Io> iceCream append("vanilla")
+    ==> list(vanilla)
+    Io> iceCream at(0)
+    ==> vanilla
+    Io> list(1, 2, 3) sum
+    ==> 6
+    Io> list(1, 2, 3) foreach(n,
+    ... writeln("#{n asString}! = #{n factorial asString}" interpolate)
+    ... )
+    1! = 1
+    2! = 2
+    3! = 6
+    ==> nil
+    Io> aMap := Map clone # a bit like a Ruby hash
+    ==> Map_0x269490:
+    
+    Io> aMap atPut("foo", "bar")
+    ==> Map_0x269490
+    
+    Io>
+    
+By now you probably have done enough to figure out what some of the "things" you can do in Io, now. But how about writing a program that does something? Generally, Io source code ends with the `.io` file extension and is run like `io file.io`. Let's try fibonacci numbers in Io. There will be a method called `fib` and `fib(1)` will return `1`, `fib(2)` will return `2`, and so on. Here's the code:
+
+    :::io
+    fib := method(nth, nth = (nth - 1) floor; numbers := list(1, 1); if(nth <= 0, 0, while(numbers size <= nth, numbers append(list(numbers last, numbers at(-2)) sum)); numbers last))
+    
+`fib` is a method condensed into one line that does this: it takes an `nth` argument, subtracts 1 from it and makes it an integer so that it works as planned, then creates a list of the first to fibonacci numbers. This method will use lists to calculate the nth fibonacci number. After the `numbers` list is creates, an `if` statement with the condition `nth <= 0` as it's first argument will return `0`, because nth(-23) wouldn't work out too well. The third argument is the else, which is a `while` loop. While the `size` of the `numbers` `List` is less than or equal to the value assigned to `nth`, the sum of the last two values in `numbers` will be calculated and appended to the list and the method will return the last fibonacci number it calculated. Give the program a go, with some numbers to test it out like `fib(4)`. If you like you can run it from the console with `doFile("/path/to/fib.io")`.
+
+    :::io
+    Io> doFile("fib.io")
+    Io> fib(4) # fourth fibonacci number
+    ==> 3
+    Io> fib(345)
+    ==> 5.639634e+71
+    Io> fib(42)
+    ==> 267914296
+
+Very nice. That's all I'll cover in this post, but if you're interested in learning more, here's some other resources:
+
+- _Seven Languages in Seven Weeks_ by Bruce Tate has a chapter on Io
+- [Io Reference](http://iolanguage.com/scm/io/docs/reference/)
+- [Io Guide](http://iolanguage.com/scm/io/docs/IoGuide.html)
+- [Io fans (links)](http://io-fans.jottit.com)
+- [Github Io](https://github.com/languages/io)
+
+
+  
+
+    
+  
