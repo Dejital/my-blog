@@ -2,7 +2,7 @@ title: Io
 author: Humza
 tags: io, prototype, programming language
 
-Lately I've been intersted in a neat language called [Io](http://iolanguage.com) (pronounced "eye-oh"). It has a minimal syntax with almost no syntactic sugar. I think it might even become one of my favorite languages, along with Ruby. Io is a prototype language, like JavaScript or Lua. In prototype languages, every "thing" is a clone of an object. There are no classes like in Ruby; only prototypes. To get started, download and install Io. I recommend getting a clone from the git repository: git://github.com/stevedekorte/io. Tar's are available from the website. Let's start the Io shell.
+Lately I've been interested in a neat language called [Io](http://iolanguage.com) (pronounced "eye-oh"). It has a minimal syntax with almost no syntactic sugar. I think it might even become one of my favorite languages, along with Ruby. Io is a prototype language, like JavaScript or Lua. In prototype languages, every "thing" is a clone of an object. There are no classes like in Ruby; only prototypes. To get started, download and install Io. I recommend getting a clone from the git repository: git://github.com/stevedekorte/io. Tar's are available from the website. Let's start the Io shell.
 
     io
     
@@ -110,7 +110,7 @@ By now you probably have done enough to figure out what some of the "things" you
     :::io
     fib := method(nth, nth = (nth - 1) floor; numbers := list(1, 1); if(nth <= 0, 0, while(numbers size <= nth, numbers append(list(numbers last, numbers at(-2)) sum)); numbers last))
     
-`fib` is a method condensed into one line that does this: it takes an `nth` argument, subtracts 1 from it and makes it an integer so that it works as planned, then creates a list of the first to fibonacci numbers. This method will use lists to calculate the nth fibonacci number. After the `numbers` list is creates, an `if` statement with the condition `nth <= 0` as it's first argument will return `0`, because nth(-23) wouldn't work out too well. The third argument is the else, which is a `while` loop. While the `size` of the `numbers` `List` is less than or equal to the value assigned to `nth`, the sum of the last two values in `numbers` will be calculated and appended to the list and the method will return the last fibonacci number it calculated. Give the program a go, with some numbers to test it out like `fib(4)`. If you like you can run it from the console with `doFile("/path/to/fib.io")`.
+`fib` is a method condensed into one line that does this: it takes an `nth` argument, subtracts 1 from it and makes it an integer so that it works as planned, then creates a list of the first two fibonacci numbers. This method will use lists to calculate the nth fibonacci number. After the `numbers` list is created, an `if` statement with the condition `nth <= 0` as it's first argument will return `0`, because `nth(-23)` wouldn't work out too well. The third argument is the else, which is a `while` loop. While the `size` of the `numbers` `List` is less than or equal to the value assigned to `nth`, the sum of the last two values in `numbers` will be calculated and appended to the list and the method will return the last fibonacci number it calculated. Give the program a go, with some numbers to test it out like `fib(4)`. If you like you can run it from the console with `doFile("/path/to/fib.io")`.
 
     :::io
     Io> doFile("fib.io")
