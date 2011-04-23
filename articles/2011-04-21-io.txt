@@ -129,6 +129,8 @@ Very nice. That's all I'll cover in this post, but if you're interested in learn
 - [Io fans (links)](http://io-fans.jottit.com)
 - [Github Io](https://github.com/languages/io)
 
+I've also created a syntax definition for my favotite editor, [Smultron](http://smultron.sourceforge.net). [io.plist](https://gist.github.com/939070#file_io.plist) is a single file to add to ~/Library/Application\ Support/Smultron/, and will appear in the Smultron menu if you add a key to ~/Library/Application\ Support/Smultron/SyntaxDefinitions.plist.
+
 
   
 
