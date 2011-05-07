@@ -3,7 +3,7 @@ require 'uv'
 require 'rack/codehighlighter'
 
 # Rack config
-use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico', '/font-face'], :root => 'public'
+use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico', '/font-face', '/humans.txt'], :root => 'public'
 use Rack::CommonLogger
 use Rack::Codehighlighter, :ultraviolet, :theme => "sunburst", :lines => false,
   :element => "pre>code", :pattern => /\A:::(\w+)\s*(\n|&#x000A;)/i, :logging => false

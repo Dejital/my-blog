@@ -1,0 +1,64 @@
+~ HUMANS.TXT~
+ ______  __                
+/\__  _\/\ \               
+\/_/\ \/\ \ \___      __   
+   \ \ \ \ \  _ `\  /'__`\ 
+    \ \ \ \ \ \ \ \/\  __/ 
+     \ \_\ \ \_\ \_\ \____\
+      \/_/  \/_/\/_/\/____/
+                           
+                           
+ __      __          __       ___                                  ___  
+/\ \  __/\ \        /\ \     /\_ \                               /'___\ 
+\ \ \/\ \ \ \     __\ \ \____\//\ \     ___      __         ___ /\ \__/ 
+ \ \ \ \ \ \ \  /'__`\ \ '__`\ \ \ \   / __`\  /'_ `\      / __`\ \ ,__\
+  \ \ \_/ \_\ \/\  __/\ \ \L\ \ \_\ \_/\ \L\ \/\ \L\ \    /\ \L\ \ \ \_/
+   \ `\___x___/\ \____\\ \_,__/ /\____\ \____/\ \____ \   \ \____/\ \_\ 
+    '\/__//__/  \/____/ \/___/  \/____/\/___/  \/___L\ \   \/___/  \/_/ 
+                                                 /\____/                
+                                                 \_/__/                 
+ ____                                      __     
+/\  _`\                                   /\ \    
+\ \,\L\_\     __    ___    ___     ___    \_\ \   
+ \/_\__ \   /'__`\ /'___\ / __`\ /' _ `\  /'_` \  
+   /\ \L\ \/\  __//\ \__//\ \L\ \/\ \/\ \/\ \L\ \ 
+   \ `\____\ \____\ \____\ \____/\ \_\ \_\ \___,_\
+    \/_____/\/____/\/____/\/___/  \/_/\/_/\/__,_ /
+                                                  
+                                                  
+ ____    ___                            __      
+/\  _`\ /\_ \                          /\ \__   
+\ \ \L\ \//\ \      __      ___      __\ \ ,_\  
+ \ \ ,__/ \ \ \   /'__`\  /' _ `\  /'__`\ \ \/  
+  \ \ \/   \_\ \_/\ \L\.\_/\ \/\ \/\  __/\ \ \_ 
+   \ \_\   /\____\ \__/.\_\ \_\ \_\ \____\\ \__\
+    \/_/   \/____/\/__/\/_/\/_/\/_/\/____/ \/__/    
+    
+/* THE AUTHOR */
+Humza (secondplanet)
+|-- Twitter:    @2nd_planet
+|-- Forrst:     @secondplanet
+|-- Github:     @secondplanet
+|-- ASCIImator: @hzaa
+ `--
+URL: http://blog.secondplanetanimation.com
+
+/* SITE */
+Tools:
+|-- Ruby 1.9.2 (http://ruby-lang.org)
+    |-- toto (https://github.com/cloudhead/toto)
+    |-- rdiscount (for Markdown)
+    |-- heroku (http://heroku.com)
+    |-- ultraviolet (Syntax Highlighting)
+     `--
+|-- Git
+|-- RVM
+|-- Google CSE
+|-- Doctype: HTML5
+|-- Text Editor: Smultron
+ `--
+Description:
+|-- A blog (mainly) about code, animation, and/or both.
+ `--
+Github: https://github.com/secondplanet/secondplanet-blog                                                
+Language: English       
