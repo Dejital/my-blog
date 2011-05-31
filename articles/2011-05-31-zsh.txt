@@ -1,0 +1,135 @@
+title: Zsh!
+author: Humza
+tags: zsh, shell, terminal, command-line, oh-my-zsh, git, rvm
+
+Today, I finally switched to `zsh` as my default shell. I'd tried it before and just descided not to because it seemed like `bash` was good enough for me. Then, I decided to give it another try. There are already a ton of articles about `zsh`, but I don't think any of the ones I have read were convincing enough for me to make the switch. I was actually convinced after listening to [The Changelog](http://thechangelog.com) podcast with Robby Russell, creator of `oh-my-zsh`, one of the most forked repos on Github besides [Homebrew](http://blog.secondplanetanimation.com/2011/04/16/homebrew) and a few others. Getting started with `oh-my-zsh` is extremely easy: just run the install script (instructions can be found at [the README](http://github.com/robbyrussell/oh-my-zsh#README)). Once installed, there were afew default options that bugged me when I started that were in my `~/.zshrc`, which is like `~/.bachrc` or `.bash_profile` for zsh users. Here was mine after disbling those features:
+
+    # Path to your oh-my-zsh configuration.
+    export ZSH=$HOME/.oh-my-zsh
+	
+    # Set name of the theme to load.
+	# Look in ~/.oh-my-zsh/themes/
+	# Optionally, if you set this to "random", it'll load a random theme each
+	# time that oh-my-zsh is loaded.
+	export ZSH_THEME="humza"
+	
+	# Set to this to use case-sensitive completion
+	export CASE_SENSITIVE="true"
+
+	# Comment this out to disable weekly auto-update checks
+	export DISABLE_AUTO_UPDATE="true"
+	
+	# Uncomment following line if you want to disable colors in ls
+	# export DISABLE_LS_COLORS="true"
+	
+	# Uncomment following line if you want to disable autosetting terminal title.
+	# export DISABLE_AUTO_TITLE="true"
+	
+	# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+	# Example format: plugins=(rails git textmate ruby lighthouse)
+	plugins=(git osx ruby rvm npm node bundler rails3 brew gem lein github cpanm pip pow perl rails thor zsh-syntax-highlighting)
+
+	source $ZSH/oh-my-zsh.sh
+
+	# Customize to your needs...
+	
+	# code adapted from Github:robbyrussell/oh-my-zsh/templates/zshrc.zsh-template
+	
+`oh-my-zsh` installs in `~/.oh-my-zsh`. What I've done is disabled case insensitivity because I don't like it, and disabled auto-update in favor of manual updates. Next, I made a Zsh theme.
+
+## Oh-my-zsh themes
+
+`~/.oh-my-zsh/themes` is where the themes are in `oh-my-zsh`. The themes consist of the prompt and colors. To create mine, `humza.zsh-theme`, I ported some features from my bash prompt over on to the theme. Here it is in full:
+
+	# ZSH THEME Preview: https://skitch.com/huyy/rk979/humza.zshtheme
+	
+	let TotalBytes=0
+	for Bytes in $(ls -l | grep "^-" | awk '{ print $5 }')
+		do
+ 	  		let TotalBytes=$TotalBytes+$Bytes
+		done
+			# should it say b, kb, Mb, or Gb
+		if [ $TotalBytes -lt 1024 ]; then
+   			TotalSize=$(echo -e "scale=3 \n$TotalBytes \nquit" | bc)
+   			suffix="b"
+		elif [ $TotalBytes -lt 1048576 ]; then
+   			TotalSize=$(echo -e "scale=3 \n$TotalBytes/1024 \nquit" | bc)
+   			suffix="kb"
+		elif [ $TotalBytes -lt 1073741824 ]; then
+   			TotalSize=$(echo -e "scale=3 \n$TotalBytes/1048576 \nquit" | bc)
+   			suffix="Mb"
+		else
+   			TotalSize=$(echo -e "scale=3 \n$TotalBytes/1073741824 \nquit" | bc)
+   			suffix="Gb"
+		fi
+	
+	PROMPT='%{$reset_color%}%n %{$fg[green]%}{%{$reset_color%}%~%{$fg[green]%}}%{$reset_color%}$(git_prompt_info)%{$fg[green]%}[%{$reset_color%}%{$TotalSize%}%{$suffix%}%{$fg[green]%}]%{$fg[red]%}$%{$reset_color%} ☞ '
+	
+	ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}±("
+	ZSH_THEME_GIT_PROMPT_SUFFIX=");%{$reset_color%} `~/.rvm/bin/rvm-prompt interpreter version gemset` "
+
+Basically, the first part is a code snippet I picked up on the 'net that tells you the size of your home directory. Then, the `PROMPT` variable is where the prompt is. Let's break this part down. `%{$reset_color%}` resets the color to the default terminal color. The `%n` is the username, in this case `humza`. Next `%{$fg[green]%}` sets the color to green. Then, `{` is displayed, in green followed by a color reset. `%~` is the `pwd`, it's your current directory. Now the closing `}` is displayed in green and `$(git_prompt_info)` is next. This is the `git` information in the prompt. Going to the bottom of the file, you can see `ZSH_THEME_GIT_PROMPT_PREFIX` is the prefix of the `git` prompt that will show in `git` repos. `ZSH_THEME_GIT_PROMPT_SUFFIX` is the end. `oh-my-zsh` will take care of telling you the current `git` branch. Because  in many code projects I am using Ruby, and also `rvm`, I am using `rvm`'s prompt after the `git` information. I don't show it all the time because my default is MRI 1.9.2, and when I'm not using that, It's probably in a code project.
+
+Back to the prompt, the `%{$TotalSize%}` contains the size of my `~/` directory that is determined by the code above the `PROMPT`. Finally a `$` and a cool unicode character finish the prompt. Here is a quick diagram showing the finished theme:
+
+![humza.zsh-theme](/css/zsh1.png)
+
+## ~/.zshrc and Plugins
+
+It's time to look at the `~/.zshrc` again! As you can see, I've `export`ed `"humza"` into `ZSH_THEME`. Now, I have some aliases I created:
+
+	alias push='git push'
+	alias fforge='fontforge'
+	alias ls='ls -a -F'
+	alias x='exit'
+	alias commit='git commit'
+	alias cal='cal -y'
+	alias twitter='ttytter'
+	alias smul='smultron'
+	alias ..='cd ..'	
+	alias cd..='cd ..'
+	alias eject='diskutil eject'
+	alias vf='cd'
+	alias ~='cd ~'
+	alias install='brew install'
+	alias jhb='jhbuild build'
+
+There's one part still unexplained: the plugins. Plugins are another cool feature in `oh-my-zsh`. You can just use them as I did in my `~/.zshrc`. The last one, zsh-syntax-highlighting is a neat plugin you can obtain like this:
+
+	cd ~/.oh-my-zsh/plugins/; git clone git://github.com/nicoulaj/zsh-syntax-highlighting.git
+	
+That's it! It makes a very colorful terminal.
+
+## Autocompletion
+
+Zsh has amazinf autocompletion features. Just press <TAB> to see them in action when typing a command, opening a file, or anything else. The spell correction is very good, and often useful.
+
+![Did you mean echo?](/css/zsh2.png)
+
+If you ever skip a letter or add an extra by accident, there is no need to worry. Now try `ls` on a directory with subdirectories. Now try the same with <TAB> to complete. Double-press <TAB>, and you can youse your keyboard to navigate to the relevant directory.
+
+![Keyboard autocomplete navigation](/css/zsh3.png)
+
+This along with the pretty colors makes it very easy to work with files in `zsh`.
+
+## iTerm.app
+
+I've been using iTerm.app as my terminal emulator, and it is a very great tool for Mac. I highly recommend it. Fullscreen mode and customzability are just some of the extra features that can't be found in Terminal.app.
+
+![iTerm.app](/css/iterm.png)
+
+## More
+
+Thank you for reading the article. Later, I might add a section on scripting in Zsh once I become more familiar with it. Here are some cool things to try out that I find interesting:
+
+* [Heroku](http://heroku.com) has several new features today, including Node.js support
+* [git-scribe](http://github.com/schacon/git-scribe) is a cool new tool for writers
+* [Ruby Rogues](http://rubyrougues.com) is a great new Ruby podcast
+* [metis](https://github.com/jeremytregunna/metis), Io on the [Rubinius VM](http://rubini.us)
+* [Tunicate](http://twitter.com/TunicateApp) is my new project; watch out for updates on Twitter. It's a secret for now.
+* [Synfig](http://synfig.org) is a very nice animation software. I need to get some more animation posts up, and I will soon. I am currently working on porting Synfig to OS X.
+* [Parry Gripp](http://parrygripp.com) has some cool songs and started a Cat Flushing the Toilet [drawing contest](http://youtu.be/7-wkUJC1uKs)
+
+
+
+
