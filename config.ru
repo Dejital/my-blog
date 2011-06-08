@@ -1,6 +1,7 @@
 require 'toto'
 require 'uv'
 require 'rack/codehighlighter'
+require 'rack/google-analytics'
 
 # Rack config
 use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico', '/font-face', '/stylus', '/humans.txt'], :root => 'public'
