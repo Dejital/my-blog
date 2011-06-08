@@ -3,10 +3,11 @@ require 'uv'
 require 'rack/codehighlighter'
 
 # Rack config
-use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico', '/font-face', '/less', '/humans.txt'], :root => 'public'
+use Rack::Static, :urls => ['/css', '/js', '/images', '/favicon.ico', '/font-face', '/stylus', '/humans.txt'], :root => 'public'
 use Rack::CommonLogger
 use Rack::Codehighlighter, :ultraviolet, :theme => "sunburst", :lines => false,
   :element => "pre>code", :pattern => /\A:::(\w+)\s*(\n|&#x000A;)/i, :logging => false
+use Rack::GoogleAnalytics, :tracker => 'UA-17044974-2'
 
 if ENV['RACK_ENV'] == 'development'
   use Rack::ShowExceptions

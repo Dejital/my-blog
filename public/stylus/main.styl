@@ -1,0 +1,316 @@
+/*
+========================
+======  main.styl  ======
+========================
+*/
+
+border-radius()
+    border-radius arguments
+    -webkit-border-radius arguments
+    -khtml-border-radius  arguments
+    -icab-border-radius   arguments
+    -moz-border-radius    arguments
+    -ms-border-radius     arguments
+    -o-border-radius      arguments
+
+/* fonts */
+@font-face
+    font-family 'saxMonoRegular'
+    src url('/font-face/saxmono-webfont.eot')
+    src local('☺'), url('/font-face/saxmono-webfont.woff') format('woff'), url('/font-face/saxmono-webfont.ttf') format('truetype'), url('/font-face/saxmono-webfont.svg#webfontnYvJbPbP') format('svg')
+    font-weight normal
+    font-style normal
+
+@font-face 
+    font-family 'QuattrocentoRomanRegular'
+    src url('/font-face/quattrocento-roman-fontfacekit/Quattrocento-Regular-webfont.eot')
+    src url('/font-face/quattrocento-roman-fontfacekit/Quattrocento-Regular-webfont.eot?#iefix') format('eot'), url('/font-face/quattrocento-roman-fontfacekit/Quattrocento-Regular-webfont.woff') format('woff'), url('/font-face/quattrocento-roman-fontfacekit/Quattrocento-Regular-webfont.ttf') format('truetype'), url('/font-face/quattrocento-roman-fontfacekit/Quattrocento-Regular-webfont.svg#webfontn2UNCKq1') format('svg')
+    font-weight normal
+    font-style normal
+
+::selection 
+    background green
+    color black
+
+::-moz-selection 
+    background green
+    color black
+
+html 
+    margin 20px
+
+body 
+    margin 0 auto
+    font-family 'QuattrocentoRomanRegular', Georgia, serif
+    font-size 18px
+    line-height 30px
+    padding 15px
+    width 720px
+    background-color #fcf9fc
+
+header, footer, section, article 
+    display block
+
+#content 
+
+#by 
+    font-style italic
+    margin-right 5px
+    font-size 28px
+
+#caption 
+    position absolute
+    font-size 24px
+    margin -135px 0 0 70px
+
+#path 
+    color #b53131
+
+.date 
+    font-style italic
+    float right
+    line-height 43px
+    margin-right 30px
+
+a 
+    color green
+    text-decoration none
+
+h1 a 
+    color green
+    text-decoration none
+    font-family 'QuattrocentoRomanRegular', Georgia, serif
+
+h1 a after 
+    content ']'
+
+h1 a before 
+    content '['
+
+h1 a hover after 
+    content ''
+
+h1 a hover before 
+    content ''
+
+a hover 
+    color black
+    text-decoration none
+
+body > header > h1 
+    border-left 30px solid black
+    padding-left 30px
+    font-size 201px
+    margin 00px 0 15px 0
+    font-weight normal
+
+.post header 
+    margin-bottom 10px
+
+.post .body p first-child 
+    margin-top 0
+
+.post .body p last-child 
+    margin-bottom 0
+
+.post 
+    margin-bottom 30px
+
+.post last-child 
+    margin-bottom 10px
+
+.post p 
+    margin 10px 0
+
+.post .more 
+    margin-top -10px
+      margin-right 30px
+      font-style italic
+      text-align right
+
+.more a 
+      text-decoration none
+
+.more a hover 
+    text-decoration underline
+    font-style italic
+
+body > header 
+    display block
+    padding-top 30px
+    line-height 180px
+    margin-bottom 20px
+
+h1, h2, h3, h4 
+      display inline
+      margin 0
+      font-weight 600
+
+ul, li 
+      list-style-type none
+
+code
+    border-radius 3px 
+    color white
+    font-family 'saxMonoRegular', Monaco, "Courier New", monospace
+    background-color black
+    margin 5px
+    padding 7px
+
+pre
+    border-radius 5px
+    font-size 15px
+    color white
+    font-family 'saxMonoRegular', Monaco, "Courier New", monospace
+    background-color black
+    overflow auto
+    padding 18px
+
+pre::-webkit-scrollbar 
+    width 10px
+    height 10px
+    border-left solid 1 #555
+     
+pre::-webkit-scrollbar-button start decrement 
+    display block
+    height 5px
+ 
+pre::-webkit-scrollbar-button end increment 
+    display block
+    height 5px
+    
+pre::-webkit-scrollbar-button vertical increment 
+    background-color transparent
+    
+pre::-webkit-scrollbar-track enabled 
+    background-color #777
+    -webkit-border-radius 5px
+
+pre::-webkit-scrollbar-thumb vertical 
+    height 50px
+    background-color rgba(0, 0, 0, .2)
+    -webkit-border-radius 5px
+     
+pre::-webkit-scrollbar-thumb horizontal 
+    width 50px
+    background-color rgba(0, 0, 0, .2)
+    -webkit-border-radius 5px
+ 
+blockquote 
+    margin-left 3px
+      font-style italic
+
+body > footer 
+      text-align left
+      margin-left 10px
+    font-style italic
+      font-size 11px
+      color #888
+
+img 
+    margin-right auto
+    margin-left auto
+    width 720px
+
+// google custom search
+#gse 
+    background-color #fcf9fc
+
+.gsc-control-cse 
+    font-family Arial, sans-serif
+    border-color #fcf9fc
+    background-color #fcf9fc
+
+input.gsc-input 
+    border-color #c0c0c0
+
+input.gsc-search-button 
+    border-color #000000
+    background-color #000000
+
+.gsc-tabHeader.gsc-tabhInactive 
+    border-color #777777
+    background-color #777777
+
+  .gsc-tabHeader.gsc-tabhActive 
+    border-color #333333
+    background-color #333333
+
+.gsc-tabsArea 
+    border-color #333333
+
+.gsc-webResult.gsc-result 
+    border-color #000000
+
+.gsc-webResult.gsc-result hover 
+    border-color #006600
+
+.gs-webResult.gs-result a.gs-title link,
+.gs-webResult.gs-result a.gs-title link b 
+    color #006600
+
+.gs-webResult.gs-result a.gs-title visited,
+.gs-webResult.gs-result a.gs-title visited b 
+    color #006600
+
+.gs-webResult.gs-result a.gs-title hover,
+.gs-webResult.gs-result a.gs-title hover b 
+    color #666666
+ 
+.gs-webResult.gs-result a.gs-title active,
+.gs-webResult.gs-result a.gs-title active b 
+    color #009900
+
+.gsc-cursor-page 
+    color #006600
+
+a.gsc-trailing-more-results link 
+    color #006600
+
+.gs-webResult.gs-result .gs-snippet 
+    color #333333
+
+.gs-webResult.gs-result .gs-visibleUrl 
+    color #000000
+
+.gs-webResult.gs-result .gs-visibleUrl-short 
+    color #000000
+
+.gs-webResult.gs-result .gs-visibleUrl-short 
+    display none
+
+.gs-webResult.gs-result .gs-visibleUrl-long 
+    display block
+
+.gsc-cursor-box 
+    border-color #000000
+
+.gsc-results .gsc-cursor-page 
+    border-color #777777
+
+.gsc-results .gsc-cursor-page.gsc-cursor-current-page 
+    border-color #333333
+    background-color #333333
+
+.gs-promotion.gs-result 
+    border-color #CCCCCC
+    background-color #666666
+
+.gs-promotion.gs-result a.gs-title link 
+    color #0000CC
+
+.gs-promotion.gs-result a.gs-title visited 
+    color #0000CC
+
+.gs-promotion.gs-result a.gs-title hover 
+    color #444444
+
+.gs-promotion.gs-result a.gs-title active 
+    color #00CC00
+
+.gs-promotion.gs-result .gs-snippet 
+    color #333333
+
+.gs-promotion.gs-result .gs-visibleUrl,
+.gs-promotion.gs-result .gs-visibleUrl-short 
+    color #00CC00
