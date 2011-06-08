@@ -29,7 +29,7 @@ toto = Toto::Server.new do
    set :markdown,  :smart                                     # use markdown + smart-mode
    set :disqus,    'secondplanetblog'                         # disqus id, or false
    set :summary,   :max => 42, :delim => /~/                  # length of article summary and delimiter
-   set :ext,       'txt'                                      # file extension for articles
+   set :ext,       'markdown'                                 # file extension for articles
    set :github,    :user => 'secondplanet', :repos => ['secondplanet-blog', 'galacticsquid', 'synfig-osx']
   # set :cache,      28800                                    # cache duration, in seconds
 
