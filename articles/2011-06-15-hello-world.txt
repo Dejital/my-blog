@@ -1,0 +1,5 @@
+title: Hello World!
+author: Sergey Kutserubov
+date: 2011/06/15
+
+My name is Sergey Kutserubov. I enjoy art, music and working with computers. Thanks for coming!
