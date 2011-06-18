@@ -13,11 +13,11 @@
   font-style: normal;
 }
 ::selection {
-  background: #ed401e;
+  background: #d72817;
   color: #000;
 }
 ::-moz-selection {
-  background: #ed401e;
+  background: #d72817;
   color: #000;
 }
 html {
@@ -30,7 +30,7 @@ body {
   line-height: 30px;
   padding: 15px;
   width: 720px;
-  background-color: #faf6dd;
+  background-color: #eaede4;
 }
 header,
 footer,
@@ -59,11 +59,11 @@ article {
   margin-right: 30px;
 }
 a {
-  color: #ed401e;
+  color: #d72817;
   text-decoration: none;
 }
 h1 a {
-  color: #ed401e;
+  color: #d72817;
   text-decoration: none;
   font-family: "QuattrocentoRomanRegular", Georgia, serif;
 }
