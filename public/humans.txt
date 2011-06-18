@@ -1,47 +1,10 @@
 ~ HUMANS.TXT~
- ______  __                
-/\__  _\/\ \               
-\/_/\ \/\ \ \___      __   
-   \ \ \ \ \  _ `\  /'__`\ 
-    \ \ \ \ \ \ \ \/\  __/ 
-     \ \_\ \ \_\ \_\ \____\
-      \/_/  \/_/\/_/\/____/
-                           
-                           
- __      __          __       ___                                  ___  
-/\ \  __/\ \        /\ \     /\_ \                               /'___\ 
-\ \ \/\ \ \ \     __\ \ \____\//\ \     ___      __         ___ /\ \__/ 
- \ \ \ \ \ \ \  /'__`\ \ '__`\ \ \ \   / __`\  /'_ `\      / __`\ \ ,__\
-  \ \ \_/ \_\ \/\  __/\ \ \L\ \ \_\ \_/\ \L\ \/\ \L\ \    /\ \L\ \ \ \_/
-   \ `\___x___/\ \____\\ \_,__/ /\____\ \____/\ \____ \   \ \____/\ \_\ 
-    '\/__//__/  \/____/ \/___/  \/____/\/___/  \/___L\ \   \/___/  \/_/ 
-                                                 /\____/                
-                                                 \_/__/                 
- ____                                      __     
-/\  _`\                                   /\ \    
-\ \,\L\_\     __    ___    ___     ___    \_\ \   
- \/_\__ \   /'__`\ /'___\ / __`\ /' _ `\  /'_` \  
-   /\ \L\ \/\  __//\ \__//\ \L\ \/\ \/\ \/\ \L\ \ 
-   \ `\____\ \____\ \____\ \____/\ \_\ \_\ \___,_\
-    \/_____/\/____/\/____/\/___/  \/_/\/_/\/__,_ /
-                                                  
-                                                  
- ____    ___                            __      
-/\  _`\ /\_ \                          /\ \__   
-\ \ \L\ \//\ \      __      ___      __\ \ ,_\  
- \ \ ,__/ \ \ \   /'__`\  /' _ `\  /'__`\ \ \/  
-  \ \ \/   \_\ \_/\ \L\.\_/\ \/\ \/\  __/\ \ \_ 
-   \ \_\   /\____\ \__/.\_\ \_\ \_\ \____\\ \__\
-    \/_/   \/____/\/__/\/_/\/_/\/_/\/____/ \/__/    
-    
+
 /* THE AUTHOR */
-Humza (secondplanet)
-|-- Twitter:    @2nd_planet
-|-- Forrst:     @secondplanet
-|-- Github:     @secondplanet
-|-- ASCIImator: @hzaa
+Sergey Kutserubov
+|-- Github:     @Dejital
  `--
-URL: http://blog.secondplanetanimation.com
+URL: http://sergey.heroku.com
 
 /* SITE */
 Tools:
@@ -53,12 +16,12 @@ Tools:
      `--
 |-- Git
 |-- RVM
-|-- Google CSE
 |-- Doctype: HTML5
-|-- Text Editor: Smultron
+|-- Text Editor: vim
  `--
 Description:
-|-- A blog (mainly) about code, animation, and/or both.
+|-- A blog about nothing, really, until I actually
+|-- start writing.
  `--
-Github: https://github.com/secondplanet/secondplanet-blog                                                
+Github: https://github.com/Dejital/my-blog
 Language: English       
