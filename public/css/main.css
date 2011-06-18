@@ -202,7 +202,7 @@ blockquote margin-left 3px {
 }
 body > footer {
   text-align: left;
-  margin-left: 10px;
+  margin-left: 0px;
 }
 font-style italic {
   font-size: 11px;
