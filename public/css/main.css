@@ -13,11 +13,11 @@
   font-style: normal;
 }
 ::selection {
-  background: #d72817;
+  background: #fff;
   color: #000;
 }
 ::-moz-selection {
-  background: #d72817;
+  background: #fff;
   color: #000;
 }
 html {
